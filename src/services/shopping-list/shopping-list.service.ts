@@ -17,4 +17,12 @@ export class ShoppingListService {
     addItem(item: Item) {
         return this.shoppingListRef.push(item);
     }
+
+    editItem(item: Item){
+        return this.shoppingListRef.update(item.key, item);
+    }
+
+    deleteItem(item: Item){
+        return this.shoppingListRef.remove(item.key);
+    }
 }
