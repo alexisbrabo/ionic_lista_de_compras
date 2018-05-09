@@ -18,11 +18,13 @@ export class ShoppingListService {
         return this.shoppingListRef.push(item);
     }
 
+    deleteItem(item: Item){
+        return this.shoppingListRef.remove(item.key);
+    }
+
     editItem(item: Item){
         return this.shoppingListRef.update(item.key, item);
     }
 
-    deleteItem(item: Item){
-        return this.shoppingListRef.remove(item.key);
-    }
+    
 }

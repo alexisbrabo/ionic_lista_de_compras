@@ -15,18 +15,18 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label>Nome</ion-label>
-    <ion-input [(ngModel)]="item.name" placeholder="Nome"></ion-input>
+    <ion-label floating>Nome</ion-label>
+    <ion-input [(ngModel)]="item.name"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label>Quantidade</ion-label>
-    <ion-input [(ngModel)]="item.quantity" type="number" placeholder="Quantidade"></ion-input>
+    <ion-label floating>Quantidade</ion-label>
+    <ion-input [(ngModel)]="item.quantity" type="number"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label>Preço</ion-label>
-    <ion-input [(ngModel)]="item.price" type="number" placeholder="Preço"></ion-input>
+    <ion-label floating>Preço</ion-label>
+    <ion-input [(ngModel)]="item.price" type="number" ></ion-input>
   </ion-item>
 
   <button ion-button block clear (click)="saveItem(item)">Salvar</button>

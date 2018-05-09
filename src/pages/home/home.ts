@@ -11,6 +11,7 @@ import { Item } from '../../models/item/item.model';
 })
 export class HomePage {
   shoppingList$: Observable<Item[]>;
+  totalValue = 0;
 
   constructor(public navCtrl: NavController, private shopping: ShoppingListService) {
     this.shoppingList$ = this.shopping
@@ -22,7 +23,18 @@ export class HomePage {
             key: c.payload.key, ...c.payload.val()
           }));
         });
+
+    this.shoppingList$.forEach(element => {
+      element.forEach(a => {
+        this.totalValue = (this.totalValue + (a.quantity * a.price));
+      })
+    });
   }
 
- 
+  removeItem(item: Item) {
+    this.shopping.deleteItem(item).then(() => {
+      this.navCtrl.setRoot('HomePage')
+    });
+  }
+
 }

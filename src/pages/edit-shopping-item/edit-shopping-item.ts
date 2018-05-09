@@ -21,14 +21,14 @@ export class EditShoppingItemPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private shopping: ShoppingListService) {
   }
 
-  ionViewWillLoad() {
-    this.item = this.navParams.get('item');
-  }
-
   removeItem(item: Item) {
     this.shopping.deleteItem(item).then(() => {
       this.navCtrl.setRoot('HomePage')
     });
+  }
+
+  ionViewWillLoad() {
+    this.item = this.navParams.get('item');
   }
 
   saveItem(item: Item) {
@@ -37,5 +37,5 @@ export class EditShoppingItemPage {
     });
   }
 
-  
+
 }
